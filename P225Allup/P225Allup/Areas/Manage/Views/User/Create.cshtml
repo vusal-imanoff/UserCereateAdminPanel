@@ -1,0 +1,77 @@
+﻿@model UserCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!--====== Breadcrumb Part Start ======-->
+
+<div class="breadcrumb-area">
+    <div class="container-fluid custom-container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-area="manage" asp-controller="user" asp-action="index">User</a></li>
+                <li class="breadcrumb-item active">Create</li>
+            </ol>
+        </nav>
+    </div> <!-- container -->
+</div>
+
+<!--====== Breadcrumb Part Ends ======-->
+<!--====== Register Part Start ======-->
+
+<section class="register-area pt-10">
+    <div class="container-fluid custom-container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="login-register-wrapper mt-30">
+                    <form method="post">
+                        <div class="single-form">
+                            <input asp-for="Name" placeholder="Name">
+                            <span class="text text-danger" asp-validation-for="Name"></span>
+                        </div>
+                        <div class="single-form">
+                            <input asp-for="SurName" placeholder="SurName">
+                            <span class="text text-danger" asp-validation-for="SurName"></span>
+                        </div>
+                        <div class="single-form">
+                            <input asp-for="FatherName" placeholder="Father Name">
+                            <span class="text text-danger" asp-validation-for="FatherName"></span>
+                        </div>
+                        <div class="single-form">
+                            <input asp-for="Age" placeholder="Age">
+                            <span class="text text-danger" asp-validation-for="Age"></span>
+                        </div>
+                        <div class="single-form">
+                            <input asp-for="Email" placeholder="Email">
+                            <span class="text text-danger" asp-validation-for="Email"></span>
+                        </div>
+                        <div class="single-form">
+                            <input asp-for="UserName" placeholder="UserName">
+                            <span class="text text-danger" asp-validation-for="UserName"></span>
+                        </div>
+                        <div class="single-form">
+                            <input asp-for="Password" placeholder="Password">
+                            <span class="text text-danger" asp-validation-for="Password"></span>
+                        </div>
+                        <div class="custom-checkbox mt-30 d-flex"  >
+                            <input asp-for="IsAdmin">
+                            <label for="IsAdmin"></label>
+                            <p>IsAdmin</p>
+                        </div>
+                        <div class="single-form">
+                            <button type="submit" class="main-btn main-btn-2">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====== Register Part Ends ======-->
+
+@section Script{
+
+    <partial name="_ValidationPartial">
+}
+
